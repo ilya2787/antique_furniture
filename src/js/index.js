@@ -9,12 +9,18 @@ for (var i = 0; i < input_file.length; i++) {
     });
 }
 
-
 const But_mobil_contact = document.querySelector(".buttom_phone");
-
+const p_telefon = document.querySelector(".contact").querySelectorAll('p');
+const a_telefon = document.querySelector(".contact").querySelectorAll('a');
 But_mobil_contact.addEventListener("click", () => {
     document.querySelector(".contact").classList.toggle('contact_active');
     document.querySelector(".buttom_phone").classList.toggle('buttom_phone_active');
+    for (let index = 0; index < p_telefon.length; index++) {
+        p_telefon[index].classList.add('_active');
+    }
+    for (let index_a = 0; index_a < a_telefon.length; index_a++) {
+        a_telefon[index_a].classList.add('_active');
+    }
 })
 
 const animation = document.querySelectorAll("._anim_items");

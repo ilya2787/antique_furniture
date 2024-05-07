@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +10,7 @@
     <title>Антикварная мебель, интерьер (Авторизация)</title>
 </head>
 <body>
-    <a href="./../index.html" class="next_index">Главная</a>
+    <a href="./../index.php" class="next_index">Главная</a>
     <div class="block_form_content">
 
             <form action="./setting/autoriz.php" method="post">

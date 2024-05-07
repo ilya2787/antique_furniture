@@ -4,8 +4,6 @@ unset($_SESSION['AddOk']);
 unset($_SESSION['errorAdd']);
 unset($_SESSION['errorImg']);
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,11 +18,11 @@ unset($_SESSION['errorImg']);
 <body>
 
 <?php 
-    if(!empty($_SESSION['login'])) : 
-?>
+    if(!empty($_SESSION['login'])) :?>
 
  
 <div class="panel_header">
+    <a href="./../index.php" target="_blank" class="panel_header_sait">Открыть сайта</a>
     <h2><?php echo "Здравствуйте ".$_SESSION['login']; ?></h2>
     <a href="./setting/logout.php" class="panel_header_exit">Выход</a>
 </div>
@@ -46,22 +44,22 @@ while ($res=$sql->fetch(PDO::FETCH_OBJ)):?>
 <div class='list_products_product'>
     <form action="./setting/update.php" method="post" enctype="multipart/form-data">
         <div class="nuber">
-            <input type="number" name="id" id="" value="<?php echo $res->id ?>" >
+            <input type="number" name="id" id="" value="<?php echo $res->id?>" >
         </div>
         <div class="img_DB">
-            <img src='./../img/products/<?php echo $res->file_img ?>'>
+            <img src='./../img/products/<?php echo $res->file_img?>'>
             
              <label class="input-file">
                 <input type="file" name="file_image" class="inputFile">  	
-	   	        <span>Выберите файл</span>
- 	        </label>
+                <span>Выберите файл</span>
+            </label>
             
         </div>
         <div class="description">
-            <textarea name="text" id="" cols="100%" rows="7" class='list_products_product__text'><?php echo $res->text ?></textarea>
+            <textarea name="text" id="" cols="100%" rows="7" class='list_products_product__text'><?php echo $res->text?></textarea>
         </div>
         <div class="price_BD">
-            <input type="number" name="price" value="<?php echo $res->price ?>" class='list_products_product__price'><i class='fa-solid fa-ruble-sign'></i>
+            <input type="number" name="price" value="<?php echo $res->price?>" class='list_products_product__price'><i class='fa-solid fa-ruble-sign'></i>
         </div>
         <div class="btn_BD">
             <button type="submit" name="save" class="btn_save">Сохранить</button>
@@ -77,10 +75,9 @@ while ($res=$sql->fetch(PDO::FETCH_OBJ)):?>
     else:
         echo "<div class='note_autoriz'>";
         echo "<h1>Вы не авторизованы</h1>";
-        echo '<a href="./../index.html">Вернуться на сайт</a>';
+        echo '<a href="./../index.php">Вернуться на сайт</a>';
         echo "</div>";
 ?>
-
 <?php endif ?>
 
 <script src="./../js/index.bundle.js"></script>
